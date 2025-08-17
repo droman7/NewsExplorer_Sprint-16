@@ -3,8 +3,8 @@ import "./Navigation.css";
 
 export default function Navigation({
   isLoggedIn,
-  onSignIn,
-  onSignOut,
+  onSignInClick,
+  onSignOutClick,
   userName,
 }) {
   const location = useLocation();
@@ -23,8 +23,9 @@ export default function Navigation({
         >
           Home
         </Link>
+
         {!isLoggedIn ? (
-          <button className="nav__button" onClick={onSignIn}>
+          <button className="nav__button" onClick={onSignInClick} type="button">
             Sign in
           </button>
         ) : (
@@ -37,7 +38,12 @@ export default function Navigation({
             >
               Saved articles
             </Link>
-            <button className="nav__button" onClick={onSignOut}>
+            <button
+              className="nav__button"
+              onClick={onSignOutClick}
+              type="button"
+              aria-label="Sign out"
+            >
               {userName} ⎋
             </button>
           </>

@@ -1,0 +1,101 @@
+/* Section background + edge spacing to mimic the comp */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 48px 104px;
+  margin: 0;
+  list-style: none;
+  background: #f3f4f6;
+  box-sizing: border-box;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 576px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.card__media {
+  position: relative;
+  height: 272px;
+}
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+.card__like {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+}
+
+.card__like_active {
+  background: #fff;
+}
+.card__like_active::before,
+.card__like_active::after {
+  background: none;
+  border-color: #111827;
+}
+
+.card__content {
+  flex: 1 1 auto;
+  background: #fff;
+  padding: 16px 16px 20px;
+  border-radius: 0 0 20px 20px;
+}
+
+.card__date {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 8px;
+}
+.card__name {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px;
+}
+.card__desc {
+  font-size: 14px;
+  color: #374151;
+  margin: 0 0 16px;
+}
+.card__source {
+  display: inline-block;
+  margin-top: auto;
+  font-size: 12px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    padding: 32px 16px;
+    gap: 16px;
+  }
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
